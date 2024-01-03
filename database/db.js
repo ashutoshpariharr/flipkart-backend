@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const Connection = async (URL) => {
   //Connection(user, password);
-
   try {
     await mongoose.connect(URL);
 

@@ -5,10 +5,7 @@
   "main": "yes",
   "start": "node server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "client-install": "cd client && npm install",
-    "client-build": "cd client && npm run build",
-    "heroku-postbuild": "npm run client-install && npm run client-build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ashutosh",
   "license": "ISC",
@@ -21,3 +18,4 @@
     "nodemon": "^3.0.2"
   }
 }
+

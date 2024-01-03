@@ -15,6 +15,11 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', Router);
 
+app.get('/', function(req, res){
+    res.send('hello world'); 
+});
+
+
 // Configuration from env file
 const user = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
@@ -23,12 +28,7 @@ const PORT = process.env.PORT || 8000;
 
 const URL = process.env.MONGODB_URI || `mongodb+srv://${user}:${password}cluster0.6zm2yca.mongodb.net/ecommers?retryWrites=true&w=majority`;
 
-
 Connection(URL);
-
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'))
-}
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
